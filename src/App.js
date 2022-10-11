@@ -4,6 +4,7 @@ import About from "./components/About/About";
 import FriendDetails from "./components/FriendDetails/FriendDetails";
 import Friends from "./components/Friends/Friends";
 import Home from "./components/Home/Home";
+import Postdetails from "./components/PostDetails/Postdetails";
 import Posts from "./components/Posts/Posts";
 import Product from "./components/Product/Product";
 import MainLayout from "./layout/MainLayout";
@@ -41,6 +42,14 @@ function App() {
           },
           element: <FriendDetails></FriendDetails>,
         },
+        {
+          path: '/post/:postID',
+          loader: async ({params}) => {
+            return fetch(`https://jsonplaceholder.typicode.com/posts/${params.postID}`);
+
+          },
+          element: <Postdetails></Postdetails>
+        }
       ],
     },
     {

@@ -14,3 +14,6 @@ nav a:hover{
     transition-duration: 500ms;
     border-radius: 3px;
 }
+.active{
+  background-color: aquamarine;
+}
